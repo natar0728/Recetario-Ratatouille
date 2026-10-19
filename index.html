@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explora recetas y descubre nuevas ideas para cocinar."
+  >
+
+  <title> NDNP | Recetas para descubrir</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header class="cabecera contenedor">
+    <a class="marca" href="./">Nuevo día <span>&</span> Nuevo Plato</a>
+    <a class="enlace-menu" href="#explorar">Explorar recetas ↗</a>
+  </header>
+
+  <main>
+    <section class="portada contenedor">
+      <div>
+        <p class="etiqueta">UN RECETARIO PARA CURIOSOS</p>
+
+        <h1>
+          Las buenas ideas
+          <em>también se cocinan.</em>
+        </h1>
+
+        <p class="introduccion">
+          Descubre recetas, explora sus ingredientes y encuentra
+          inspiración para tu próxima comida.
+        </p>
+
+        <a class="boton" href="#explorar">Abrir el recetario ↓</a>
+      </div>
+
+      <aside class="nota">
+        <span class="ilustracion" aria-hidden="true">🍴</span>
+        <p>Pásale<br>Aquí se cocina<br>Con curiosidad</p>
+        <span class="firma">Aprende nuevas recetas</span>
+      </aside>
+    </section>
+
+    <section id="explorar" class="contenedor explorador">
+      <p class="etiqueta">01 / EXPLORA EL RECETARIO</p>
+      <h2>¿Qué te gustaría cocinar?</h2>
+
+      <form id="formulario" class="buscador">
+        <label for="busqueda">Nombre de una receta</label>
+
+        <div class="controles">
+          <input
+            id="busqueda"
+            name="busqueda"
+            type="search"
+            placeholder="Ejemplo: pasta, chicken, cake..."
+            aria-describedby="ayuda"
+            maxlength="80"
+            required
+          >
+
+          <button class="boton" type="submit">
+            Buscar recetas
+          </button>
+
+          <button
+            id="aleatoria"
+            class="boton boton-secundario"
+            type="button"
+          >
+            Sorpréndeme ↗
+          </button>
+        </div>
+
+        <p id="ayuda" class="ayuda">
+          Busca por nombre en inglés. Las recetas se muestran
+          en el idioma original del servicio.
+        </p>
+      </form>
+
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+
+      <div
+        id="resultados"
+        class="resultados"
+        aria-label="Resultados de recetas"
+        aria-busy="false"
+      ></div>
+    </section>
+  </main>
+
+  <dialog id="detalle" aria-labelledby="titulo-detalle">
+    <div class="barra-dialogo">
+      <button id="cerrar" class="boton boton-secundario" type="button">
+        Cerrar ✕
+      </button>
+    </div>
+
+    <img id="imagen-detalle" class="imagen-detalle" alt="">
+
+    <div class="contenido-detalle">
+      <p id="categoria-detalle" class="etiqueta"></p>
+      <h2 id="titulo-detalle" lang="en"></h2>
+
+      <h3>Ingredientes</h3>
+      <ul id="ingredientes" lang="en"></ul>
+
+      <h3>Preparación</h3>
+      <p id="instrucciones" lang="en"></p>
+    </div>
+  </dialog>
+
+  <footer class="pie contenedor">
+    <p>Bosque & Mesa · Proyecto académico de Hazell Reyes</p>
+
+    <a
+      href="https://www.themealdb.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Datos e imágenes: TheMealDB ↗
+    </a>
+  </footer>
+</body>
+</html>
